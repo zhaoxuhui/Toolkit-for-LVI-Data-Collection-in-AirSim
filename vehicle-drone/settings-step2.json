@@ -1,0 +1,75 @@
+{
+    "SeeDocsAt": "https://microsoft.github.io/AirSim/settings/",
+    "SettingsVersion": 1.2,
+  
+    "SimMode": "Multirotor",
+    "PhysicsEngineName":"ExternalPhysicsEngine",
+  
+     "Vehicles": {
+        "Ours": {
+            "VehicleType": "SimpleFlight",
+            "AutoCreate": true,
+            "Sensors": {
+              "Imu": {
+                "SensorType": 2,
+                "Enabled" : true,
+                "AngularRandomWalk": 0.3,
+                "GyroBiasStabilityTau": 500,
+                "GyroBiasStability": 4.6,
+                "VelocityRandomWalk": 0.24,
+                "AccelBiasStabilityTau": 800,
+                "AccelBiasStability": 36,
+                "X": 0, "Y": 0, "Z": -1,
+                "Roll": 0, "Pitch": 0, "Yaw" : 0
+                },
+              "LidarSensor": {
+                "SensorType": 6,
+                  "Enabled" : true,
+                  "NumberOfChannels": 32,
+                  "RotationsPerSecond": 500,
+                  "PointsPerSecond": 300000,
+                  "VerticalFOVUpper": 30,
+                  "VerticalFOVLower": -15,
+                  "DrawDebugPoints": false,
+                  "DataFrame": "SensorLocalFrame",
+                  "range": 100,
+                  "X": 0, "Y": 0, "Z": -1,
+                  "Roll": 0, "Pitch": 0, "Yaw" : 0
+               }
+              },
+  
+              "Cameras": {
+                "front_left": {
+                  "CaptureSettings": [
+                    {
+                      "ImageType": 0,
+                      "Width": 752,
+                      "Height": 480,
+                      "//": "这里的FOV主要指的是水平方向的角度,但事实上如果调整了这个角度,竖直方向视场角也会相应跟着变化",
+                      "FOV_Degrees": 90
+                    }
+                  ],
+                  "X": 0.35, "Y": -0.05, "Z": -0.1,
+                  "Pitch": 0, "Roll": 0, "Yaw": 0
+                },
+                "front_right": {
+                  "CaptureSettings": [
+                    {
+                      "ImageType": 0,
+                      "Width": 752,
+                      "Height": 480,
+                      "FOV_Degrees": 90
+                    }
+                  ],
+                  "X": 0.35, "Y": 0.05, "Z": -0.1,
+                  "Pitch": 0, "Roll": 0, "Yaw": 0
+                }
+               },
+               
+               "//": "这下面的表示我们搭建的这个平台的位置与姿态",
+               "X": 0, "Y": 0, "Z": 0,
+              "Pitch": 0, "Roll": 0, "Yaw": 0
+            }
+      }
+    
+  }
